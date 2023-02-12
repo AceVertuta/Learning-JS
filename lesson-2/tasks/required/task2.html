@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #2</h1>
+
+        <p>
+            Дано рік народження (дата: 1 січня) та поточний рік. Знайти кількість років.
+        </p>
+
+        <script>
+            let yearOfBirthAsString = prompt('Set year of birth');
+
+            const yearOfBirth = Number(yearOfBirthAsString);
+            const currentYear = new Date().getFullYear();
+
+            if(yearOfBirth > currentYear) {
+                alert('Year of birth should be less or equal current year. Please, refresh the page and try again.');
+            } else {
+                document.writeln(`Year Of Birth = ${yearOfBirth}`);
+                document.writeln('<br>');
+                document.writeln(`Current Year = ${currentYear}`);
+                document.writeln('<br>');
+                document.writeln(`Age = ${currentYear - yearOfBirth}`);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #6</h1>
+
+        <p>
+            З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість
+кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи
+елементи розмітки.
+        </p>
+
+        <script>
+            let priceInString = prompt('Enter price');
+            let amountInString = prompt('ENter amount of goods');
+
+            const price = Number(priceInString);
+            const amount = parseInt(amountInString, 10);
+
+            function addRow(text, value) {
+                let tr = document.createElement('tr');
+
+                var tdText = document.createElement('td');
+                var tdValue = document.createElement('td');
+
+                tdText.appendChild(document.createTextNode(text));
+                tdValue.appendChild(document.createTextNode(value));
+
+                tr.appendChild(tdText);
+                tr.appendChild(tdValue);
+
+                return tr;
+            }
+
+            function generateBill(price, amount) {
+                let body = document.getElementsByTagName('body')[0];
+
+                let table = document.createElement('table');
+                let tableBody = document.createElement('tbody');
+
+                for(let a = 0; a < amount; a++) {
+                    table.appendChild(addRow('Some item', price));
+                }
+
+                table.appendChild(addRow(' ', ' '));
+                table.appendChild(addRow('Total', price * amount));
+
+                table.appendChild(tableBody);
+                table.border = 1;
+
+                body.appendChild(table);
+            }
+
+            if (price < 0 || amount < 0) {
+                alert('Invalid data. Please, refresh the page and try again.');
+            } else {
+                document.writeln(`Price = ${price}`);
+                document.writeln('<br>');
+                document.writeln(`Amount = ${amount}`);
+                document.writeln('<br>');
+
+                generateBill(price, amount);
+            }
+        </script>
+    </body>
+</html>

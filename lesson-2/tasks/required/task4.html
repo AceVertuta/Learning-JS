@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #4</h1>
+
+        <p>
+            Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.
+        </p>
+
+        <script>
+            let lengthAsString = prompt('Set length');
+
+            const lengthInSm = Number(lengthAsString);
+
+            if(lengthInSm < 0) {
+                alert('Invalid data. Please, refresh the page and try again.');
+            } else {
+                let lengthInM = lengthInSm / 100;
+                let lengthInKm = lengthInM / 1000;
+
+                document.writeln(`Length = ${lengthInSm}`);
+                document.writeln('<br>');
+                document.writeln('<br>');
+                document.writeln(`Length In M = ${lengthInM}`);
+                document.writeln('<br>');
+                document.writeln(`Length In KM = ${lengthInKm}`);
+            }
+        </script>
+    </body>
+</html>

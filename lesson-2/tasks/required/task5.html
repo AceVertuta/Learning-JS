@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #5</h1>
+
+        <p>
+            Дано кількість секунд, що пройшла від початку доби. Визначити скільки це годин і хвилин.
+        </p>
+
+        <script>
+            let secondsInString = prompt('Set seconds');
+            
+            const secondsTotal = parseInt(secondsInString, 10);
+
+            if(secondsTotal < 0) {
+                alert('Invalid data. Please, refresh the page and try again.');
+            } else {
+                const SECONDS_IN_HOUR = 3600;
+                const SECONDS_IN_MINUTE = 60;
+
+                let hours = Math.trunc(secondsTotal / SECONDS_IN_HOUR);
+                let minutes = Math.trunc((secondsTotal % SECONDS_IN_HOUR) / SECONDS_IN_MINUTE);
+                let seconds = secondsTotal - (hours * SECONDS_IN_HOUR + minutes * SECONDS_IN_MINUTE);
+
+                document.writeln(`Total Seconds = ${secondsTotal}`);
+                document.writeln('<br>');
+                document.writeln('<br>');
+                document.writeln(`Hours = ${hours}`);
+                document.writeln('<br>');
+                document.writeln(`Minutes = ${minutes}`);
+                document.writeln('<br>');
+                document.writeln(`Seconds = ${seconds}`);
+            }
+        </script>
+    </body>
+</html>

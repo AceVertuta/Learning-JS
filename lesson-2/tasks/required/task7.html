@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #7</h1>
+
+        <p>
+            Знайти суму випадкового номера місяця (від 1 до 12) та випадкового номера дня (від 0 до 6).
+        </p>
+
+        <script>
+            const MONTH_MIN = 1;
+            const MONTH_MAX = 12;
+
+            const DAY_MIN = 0;
+            const DAY_MAX = 6;
+
+            function getRandomIntInclusive(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            const month = getRandomIntInclusive(MONTH_MIN, MONTH_MAX);
+            const day = getRandomIntInclusive(DAY_MIN, DAY_MAX);
+            const sum = month + day;
+
+            document.writeln(`Generated Month = ${month}`);
+            document.writeln('<br>');
+            document.writeln(`Generated Day = ${day}`);
+            document.writeln('<br>');
+            document.writeln('<br>');
+            document.writeln(`Sum = ${sum}`);
+        </script>
+    </body>
+</html>

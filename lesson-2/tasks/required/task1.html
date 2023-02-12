@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #1</h1>
+
+        <p id="description">
+            Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
+        </p>
+
+        <script>
+            function addRow(text, value) {
+                let tr = document.createElement('tr');
+
+                var tdText = document.createElement('td');
+                var tdValue = document.createElement('td');
+
+                tdText.appendChild(document.createTextNode(text));
+                tdValue.appendChild(document.createTextNode(value));
+
+                tr.appendChild(tdText);
+                tr.appendChild(tdValue);
+
+                return tr;
+            }
+
+            let aAsString = prompt('Please, enter \'a\'', 0);
+            let bAsString = prompt('Please, enter \'b\'', 0);
+
+            const a = Number(aAsString);
+            const b = Number(bAsString);
+
+            document.writeln(`a = ${a}`);
+            document.writeln('<br>');
+            document.writeln(`b = ${b}`);
+            document.writeln('<br>');
+
+            let body = document.getElementsByTagName('body')[0];
+            let table = document.createElement("table");
+            let tableBody = document.createElement("tbody");
+
+            tableBody.appendChild(addRow('Сума', (a + b)));
+            tableBody.appendChild(addRow('Добуток', (a * b)));
+            tableBody.appendChild(addRow('Частка', (a / b)));
+
+            table.appendChild(tableBody);
+            table.border = '1';
+
+            body.appendChild(table);
+        </script>
+    </body>
+</html>

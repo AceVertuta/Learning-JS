@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #3</h1>
+
+        <p>
+            Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної вартості).
+        </p>
+
+        <script>
+            let amountAsString = prompt('Set amoumt of goods');
+            let priceAsString = prompt('Set price');
+
+            const amount = parseInt(amountAsString, 10);
+            const price = Number(priceAsString);
+
+            if(amount < 0 || price < 0) {
+                alert('Invalid data. Please, refresh the page and try again.');
+            } else {
+                let totalPrice = amount * price;
+                let tax = totalPrice * 0.05;
+
+                document.writeln(`Amount = ${amount}`);
+                document.writeln('<br>');
+                document.writeln(`Price = ${price}`);
+                document.writeln('<br>');
+                document.writeln('<br>');
+                document.writeln(`Total Price = ${totalPrice}`);
+                document.writeln('<br>');
+                document.writeln(`Tax = ${tax}`);
+            }
+        </script>
+    </body>
+</html>
