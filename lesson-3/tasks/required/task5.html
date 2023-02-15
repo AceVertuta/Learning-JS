@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #5</h1>
+
+        <p>
+            З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий
+            автомобіль, С-вантажний автомобіль). Вивести на екран назву транспортного
+            засобу, яким він може керувати.
+        </p>
+
+        <script>
+            const category = prompt('Enter category:');
+
+            switch (category) {
+                case 'A':
+                case 'a':
+                    document.writeln('мотоцикл');
+                    document.writeln('<br>');
+                    break;
+
+                case 'B':
+                case 'b':
+                    document.writeln('легковий автомобіль');
+                    document.writeln('<br>');
+                    break;
+
+                case 'C':
+                case 'c':
+                    document.writeln('вантажний автомобіль');
+                    document.writeln('<br>');
+                    break;
+
+                default:
+                    document.writeln('Invalid data');
+                    document.writeln('<br>');
+                    break;
+            }
+        </script>
+    </body>
+</html>

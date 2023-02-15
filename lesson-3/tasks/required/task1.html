@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #1</h1>
+
+        <p>
+            З клавіатури вводяться імена двох дітей та кількість у них цукерок. Вивести
+            на екран ім’я тієї дитини, у якої кількість цукерок є більшою, або вивести, що
+            кількість однакова.
+        </p>
+
+        <script>
+            const childOneName = prompt('Please, enter child name', '');
+            const childOneAmountOfCandies = parseInt(prompt('Please, enter amount of candies', 0));
+
+            const childTwoName = prompt('Please, enter child name', '');
+            const childTwoAmountOfCandies = parseInt(prompt('Please, enter amount of candies', 0));
+
+            if (!childOneName || !childTwoName) {
+                alert('Invalid data. Please, refresh the page and try again.');
+            } else {
+                document.writeln(`Child One Name = ${childOneName}`);
+                document.writeln('<br>');
+                document.writeln(`Child One Amount Of Candies = ${childOneAmountOfCandies}`);
+                document.writeln('<br>');
+
+                document.writeln(`Child Two Name = ${childTwoName}`);
+                document.writeln('<br>');
+                document.writeln(`Child Two Amount Of Candies = ${childTwoAmountOfCandies}`);
+                document.writeln('<br>');
+                
+                document.writeln('<hr>');
+                document.writeln('<br>');
+
+                if (childOneAmountOfCandies > childTwoAmountOfCandies) {
+                    document.writeln(`${childOneName} has more candies than ${childTwoName}`);
+                } else if (childOneAmountOfCandies < childTwoAmountOfCandies) {
+                    document.writeln(`${childTwoName} has more candies than ${childOneName}`);
+                } else if (childOneAmountOfCandies === childTwoAmountOfCandies) {
+                    document.writeln('They have the same amount of candies.');
+                }
+            }
+        </script>
+    </body>
+</html>

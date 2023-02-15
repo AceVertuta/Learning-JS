@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #2</h1>
+
+        <p>
+            З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не
+            вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, то
+            пропонуємо купити лотерею за 4 грн.
+        </p>
+
+        <script>
+            const price = parseInt(prompt('Please, enter price', 0));
+            const amountOfMoney = parseInt(prompt('Please, enter amount of money', 0));
+
+            const LOTTERY_PRICE = 4;
+
+            if (price < 0 || amountOfMoney < 0) {
+                alert('Invalid data. Please, refresh the page and try again.');
+            } else {
+                document.writeln(`Price = ${price}`);
+                document.writeln('<br>');
+                document.writeln(`Amount of money = ${amountOfMoney}`);
+                document.writeln('<br>');
+
+                document.writeln('<hr>');
+                document.writeln('<br>');
+
+                if (price > amountOfMoney) {
+                    document.writeln('You don\'t have enough money to buy that. ');
+                } else {
+                    document.writeln('Congrats! You purchased that.');
+
+                    if ((amountOfMoney - price) >= LOTTERY_PRICE ) {
+                        document.writeln('Would you like to buy lottery ticket for 4 grn.?');
+                    } 
+                }
+            }
+        </script>
+    </body>
+</html>

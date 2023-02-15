@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #7</h1>
+
+        <p>
+            З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься
+        </p>
+
+        <script>
+            const monthNumber = prompt('Enter month number:');
+
+            switch (monthNumber) {
+                case '12':
+                case '1':
+                case '2':
+                    document.writeln('Winter');
+                    document.writeln('<br>');
+                    break;
+
+                case '3':
+                case '4':
+                case '5':
+                    document.writeln('Spring');
+                    document.writeln('<br>');
+                    break;
+
+                case '6':
+                case '7':
+                case '8':
+                    document.writeln('Summer');
+                    document.writeln('<br>');
+                    break;
+
+                case '9':
+                case '10':
+                case '11':
+                    document.writeln('Fall');
+                    document.writeln('<br>');
+                    break;
+
+                default:
+                    document.writeln('Invalid data');
+                    document.writeln('<br>');
+                    break;
+            }
+        </script>
+    </body>
+</html>

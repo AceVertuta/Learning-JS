@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #4</h1>
+
+        <p>
+            З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у
+садочку, школярем, студентом, працівником, пенсіонером).
+        </p>
+
+        <script>
+            const age = parseInt(prompt('Enter age', 0));
+
+            document.writeln(`Age = ${age}`);
+            document.writeln('<br>');
+                
+            document.writeln('<hr>');
+            document.writeln('<br>');
+
+            if (age >= 0 && age < 7) {
+                document.writeln('В садку');
+                document.writeln('<br>');
+            } else if (age >= 7 && age < 19) {
+                document.writeln('Школяр');
+                document.writeln('<br>');
+            } else if (age >= 19 && age < 24) {
+                document.writeln('Студент');
+                document.writeln('<br>');
+            } else if (age >= 25 && age < 66) {
+                document.writeln('Прац1вник');
+                document.writeln('<br>');
+            } else if (age >= 66) {
+                document.writeln('Пенс1онер');
+                document.writeln('<br>');
+            } else {
+                document.writeln('Invalid data');
+                document.writeln('<br>');
+            }
+        </script>
+    </body>
+</html>
