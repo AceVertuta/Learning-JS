@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #16</h1>
+
+        <p>
+            Користувач поступово вводить прибуток магазину за кожен день протягом N тижнів. Знайти
+загальну величину прибутку та вивести величину прибутку протягом кожного окремого тижня.
+        </p>
+
+        <script>
+            const WEEKS_AMOUNT = 2;
+            const DAYS_PER_WEEK = 7;
+
+            // let profitArray = new Array(WEEKS_AMOUNT)
+            //     .fill(new Array(DAYS_PER_WEEK).fill(0));
+
+            let profitArray = new Array(WEEKS_AMOUNT);
+
+            for(let week = 0; week < WEEKS_AMOUNT; week++) {
+                profitArray[week] = new Array(DAYS_PER_WEEK).fill(0);
+
+                for(let day = 0; day < DAYS_PER_WEEK; day++) {
+                    profitArray[week][day] = parseInt(prompt(`Week #${week + 1}, Day #${day + 1}. Enter amount of profit`));
+                }
+            }
+
+            let profitPerWeekArray = new Array(WEEKS_AMOUNT).fill(0);
+            profitArray.forEach((week, weekIndex) => 
+                week.forEach(dayProfit => profitPerWeekArray[weekIndex] += dayProfit));
+
+            for(let week = 0; week < WEEKS_AMOUNT; week++) {
+                document.writeln(`Week #${week + 1}. Weekly profit: ${profitPerWeekArray[week]} <br>`);
+            }
+
+            let totalProfit = 0;
+            profitPerWeekArray.forEach(x => totalProfit += x);
+
+            document.writeln('<br>');
+            document.writeln(`Total profit: ${totalProfit}`);
+            
+        </script>
+    </body>
+</html>

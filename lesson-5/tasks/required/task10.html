@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #10</h1>
+
+        <p>
+            Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем числами.
+        </p>
+
+        <script>
+            const minEnteredNumber = parseInt(prompt('Enter min number:'));
+            const maxEnteredNumber = parseInt(prompt('Enter max number:'));
+
+            let sum = 0;
+
+            if (minEnteredNumber >= maxEnteredNumber) {
+                alert("Invalid data. Please refresh the page and try again.");
+            } else {
+                document.writeln(`Min Entered Number =  ${minEnteredNumber}`);
+                document.writeln('<br/>');
+
+                document.writeln(`Max Entered Number =  ${maxEnteredNumber}`);
+                document.writeln('<br/>');
+                document.writeln('<br/>');
+                document.writeln('<hr/>');
+
+                for (let value = minEnteredNumber; value <= maxEnteredNumber; value++) {
+                    if (value % 2) {
+                        sum += value;
+                    }
+                }
+
+                document.writeln(`Sum =  ${sum}`);
+                document.writeln('<br/>');
+            }
+        </script>
+    </body>
+</html>

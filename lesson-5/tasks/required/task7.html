@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #7</h1>
+
+        <p>
+            Вивести на екран N абзаців (N вводиться користувачем) за зразком:
+        </p>
+
+        <script>
+            const paraNumber = parseInt(prompt('Enter amount of paragraphs:'));
+
+            if (paraNumber <= 0) {
+                alert("Invalid data. Please refresh the page and try again.");
+            } else {
+
+                for (let paraIndex = 1; paraIndex <= paraNumber; paraIndex++) {
+                    document.writeln(`<h1>Заголовок #${paraIndex}</h1>`);
+
+                    for (let lineIndex = 1; lineIndex <= paraIndex; lineIndex++) {
+                        document.writeln(`<p>Розд1л #${paraIndex}, Параграф #${lineIndex}</p>`);
+                    }
+
+                    document.writeln('<hr>');
+                }
+            }
+        </script>
+    </body>
+</html>

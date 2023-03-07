@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <script src="../../../common/js/utility.js"></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #12</h1>
+
+        <p>
+            Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції
+вибирається як одне з чотирьох зображень. Вивести ці зображення і повідомити виграш користувача
+(три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення –
+1000грн). Використати цикли і switch (для вибору зображення за номером).
+        </p>
+
+        <script>
+            function getImageByNumber(number) {
+                switch(number) {
+                    case 1:
+                        return String.fromCharCode(0x058e);
+
+                    case 2:
+                        return String.fromCharCode(0x20bf);
+
+                    case 3:
+                        return String.fromCharCode(0x266b);
+
+                    case 4:
+                    default:
+                        return String.fromCharCode(0x25b2);
+                }
+            }
+
+            function getPrizeAmountByNumber(number) {
+                switch(number) {
+                    case 1:
+                        return 100;
+
+                    case 2:
+                        return 200;
+
+                    case 3:
+                        return 500;
+
+                    case 4:
+                        return 1000;
+
+                    default:
+                        return 0;
+                }
+            }
+
+            function getPopupMessage(imageNumber1, imageNumber2, imageNumber3) {
+                let result = `${getImageByNumber(imageNumber1)} ${getImageByNumber(imageNumber2)} ${getImageByNumber(imageNumber3)}`;
+                let message = '';
+
+                if (imageNumber1 === imageNumber2 && imageNumber2 === imageNumber3) {
+                    message = `You win! Your prize is \'${getPrizeAmountByNumber(imageNumber1)}\'`;
+                } else {
+                    message = 'You lose. Your prize is \'0\'';
+                }
+
+                return `" ${result} ". ${message}`;
+            }
+
+            const MIN = 1;
+            const MAX = 4;
+
+            do {
+                let imageNumber1 = getRandomIntInclusive(MIN, MAX);
+                let imageNumber2 = getRandomIntInclusive(MIN, MAX);
+                let imageNumber3 = getRandomIntInclusive(MIN, MAX);
+
+                message = getPopupMessage(imageNumber1, imageNumber2, imageNumber3);
+                
+                document.writeln(`${getImageByNumber(imageNumber1)} ${getImageByNumber(imageNumber2)} ${getImageByNumber(imageNumber3)}  (${imageNumber1} ${imageNumber2} ${imageNumber3})`);
+                document.writeln('<br>');
+            } while(window.confirm(`${message}. Try again?`))
+        </script>
+    </body>
+</html>

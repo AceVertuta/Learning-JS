@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src='../../../common/js/utility.js'></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #15</h1>
+
+        <p>
+            Користувач поступово вводить показники температури протягом року. Знайти середню
+температуру.
+        </p>
+
+        <script>
+            const MIN_ROUNDS = 1;
+            const MAX_ROUNDS = 15;
+
+            const rounds = getRandomIntInclusive(MIN_ROUNDS, MAX_ROUNDS);
+            const enteredTemperatures = new Array(rounds);
+
+            for(let i = 0; i < rounds; i++) {
+                let temperature = parseInt(prompt(`ENter temperature. ${rounds  - i} rounds left`));
+
+                document.writeln(`Round #${i + 1}: ${temperature} <br>`);
+
+                enteredTemperatures[i] = temperature;
+            }
+
+            let totalTemperature = 0;
+            enteredTemperatures.forEach(x => totalTemperature += x);
+
+            document.writeln(`<br> Average temperature: ${totalTemperature / rounds}`);
+        </script>
+    </body>
+</html>

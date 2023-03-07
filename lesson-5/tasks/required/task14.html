@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src='../../../common/js/utility.js'></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #14</h1>
+
+        <p>
+            Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач поступово вводить
+суму грошей до тих пір, поки суми не буде достатньо для оплати товарів (кожного разу користувачу
+повідомляють, яку ще суму потрібно ввести).
+        </p>
+
+        <script>
+            const MIN_COST = 1;
+            const MAX_COST = 10000;
+
+            const costToPay = getRandomIntInclusive(MIN_COST, MAX_COST);
+
+            let totalPaidCost = 0;
+
+            while (totalPaidCost < costToPay) {
+                const paidCost = parseInt(prompt(`You need to pay ${costToPay - totalPaidCost}. Please enter amount to pay.`));
+
+                totalPaidCost += paidCost;
+            }
+
+            alert('Done.');
+        </script>
+    </body>
+</html>

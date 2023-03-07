@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script src="../../../common/js/utility.js"></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #9</h1>
+
+        <p>
+            Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).
+        </p>
+
+        <script>
+            const MIN = 0;
+            const MAX = 100;
+
+            const numberToBeGuessed = parseInt(prompt(`Please, enter number from ${MIN} to ${MAX}:`));
+
+            if (numberToBeGuessed < MIN || numberToBeGuessed > MAX) {
+                alert("Invalid data. Please refresh the page and try again.");
+            } else {
+                let number;
+
+                do {
+                    number = getRandomIntInclusive(MIN, MAX);   
+                } while(!window.confirm(`Is it ${number}?`));
+
+                document.writeln(`Number was: ${numberToBeGuessed}`);
+                document.writeln('<br/>');
+            }
+        </script>
+    </body>
+</html>

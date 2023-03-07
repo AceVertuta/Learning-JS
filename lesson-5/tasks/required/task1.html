@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="../../../common/js/utility.js"></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #1</h1>
+
+        <p>
+            Вивести з використанням циклів маркований список з випадковими числами (1-100).
+Кількість випадкових чисел вводиться користувачем.
+        </p>
+
+        <script>
+            const listItemsAmount = parseInt(prompt('Please, enter amount of numbers', ''));
+
+            if (listItemsAmount < 0) {
+                alert('Invalid data. Please, refresh the page and try again.');
+            } else {
+                document.writeln('<ul>');
+
+                for (let i = 0; i < listItemsAmount; i++) {
+                    document.writeln('<li>');
+                    document.writeln(getRandomIntInclusive(1, 100));
+                    document.writeln('</li>');
+                }
+
+                document.writeln('</ul>');
+            }
+        </script>
+    </body>
+</html>

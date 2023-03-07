@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <script src='../../../common/js/utility.js'></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #13</h1>
+
+        <p>
+            Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M.
+Маючи К снарядів користувач намагається потопити корабель.
+        </p>
+
+        <script>
+            const DEFAULT_WIDTH = 9;
+            const DEFAULT_HEIGHT = 9;
+            const DEFAULT_SHELLS_AMOUNT = 10;
+            const DEFAULT_SHIPS_AMOUNT = 1;
+
+            const EMPTY_FIELD = String.fromCharCode(0x25e6);
+            const FIRED_FIELD = String.fromCharCode(0x25a0);
+            const PRISTINE_SHIP_FIELD = String.fromCharCode(0x2592);
+            const FIRED_SHIP_FIELD = String.fromCharCode(0x2588);
+
+            let shellsLeft = DEFAULT_SHELLS_AMOUNT;
+            let shipsLeft = DEFAULT_SHIPS_AMOUNT;
+            let round = 1;
+
+            // init field
+            const combatField = new Array(DEFAULT_WIDTH);
+            for(let i = 0; i < DEFAULT_WIDTH; i++) {
+                combatField[i] = new Array(DEFAULT_HEIGHT).fill(EMPTY_FIELD);
+            }
+
+            // fill field with ship
+            const widthPosition = getRandomIntInclusive(0, DEFAULT_WIDTH - 1);
+            const heightPosition = getRandomIntInclusive(0, DEFAULT_HEIGHT - 1);
+            combatField[widthPosition][heightPosition] = PRISTINE_SHIP_FIELD;
+
+            // action
+            do {
+                const widthPosition = parseInt(prompt(`Round ${round}. Ships left: ${shipsLeft}. Shells left: ${shellsLeft}. Enter Width Position from '0' to '${DEFAULT_WIDTH - 1}'`));
+                const heightPosition = parseInt(prompt(`Round ${round}. Ships left: ${shipsLeft}. Shells left: ${shellsLeft}. Enter Height Position from '0' to '${DEFAULT_HEIGHT - 1}'`));
+
+                if ((widthPosition < 0 || widthPosition >= DEFAULT_WIDTH) ||
+                    (heightPosition < 0 || heightPosition >= DEFAULT_HEIGHT)) {
+                    alert('Invalid position entered. Try another field');
+                } else if (combatField[widthPosition][heightPosition] === FIRED_FIELD ||
+                           combatField[widthPosition][heightPosition] === FIRED_SHIP_FIELD) {
+                    alert('This field has already been fired. Try another field');
+                } else if (combatField[widthPosition][heightPosition] === EMPTY_FIELD) {
+                    alert('Missed!');
+
+                    round++;
+                    shellsLeft--;
+
+                    combatField[widthPosition][heightPosition] = FIRED_FIELD;
+                } else if (combatField[widthPosition][heightPosition] === PRISTINE_SHIP_FIELD) {
+                    alert('Hit!');
+
+                    round++;
+                    shellsLeft--;
+                    shipsLeft--;
+
+                    combatField[widthPosition][heightPosition] = FIRED_SHIP_FIELD;
+                }
+
+            } while(shellsLeft && shipsLeft);
+
+            if (shipsLeft) {
+                alert('Unfortunately you didn\'t destroy all ships!');
+            } else {
+                alert('Congrats! You destroyed all ships!');
+
+            }
+
+            // result
+            for(let w = 0; w < DEFAULT_WIDTH; w++) {
+                for(let h = 0; h < DEFAULT_HEIGHT; h++) {
+                    document.writeln(`   ${combatField[w][h]}   `);
+                }
+
+                document.writeln('<br>');
+            }
+
+        </script>
+    </body>
+</html>

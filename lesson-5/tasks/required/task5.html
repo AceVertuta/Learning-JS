@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #5</h1>
+
+        <p>
+            Вивести таблицю. 3*3
+        </p>
+
+        <script>
+            const ROW_NUMBER = 3;
+            const COL_VALUE = 3;
+
+            document.writeln('<table border="1">');
+            document.writeln('<tbody>');
+
+            for (let rowIndex = 0; rowIndex < ROW_NUMBER; rowIndex++) {
+                document.writeln('<tr>');
+
+                for (let colIndex = 1; colIndex <= COL_VALUE; colIndex++) {
+                    document.writeln(`<td>${(rowIndex * COL_VALUE) + colIndex}</td>`);
+                }
+
+                document.writeln('</tr>');
+            }
+
+            document.writeln('</tbody>');
+            document.writeln('</table>');
+        </script>
+    </body>
+</html>

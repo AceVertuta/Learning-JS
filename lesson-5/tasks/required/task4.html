@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #4</h1>
+
+        <p>
+            Вивести таблицю з 3 рядків і 7 стовпців.
+        </p>
+
+        <script>
+            const ROW_NUMBER = 3;
+            const COL_VALUE = 7;
+
+            document.writeln('<table border="1">');
+            document.writeln('<tbody>');
+
+            for (let rowIndex = 1; rowIndex <= ROW_NUMBER; rowIndex++) {
+                document.writeln('<tr>');
+
+                for (let colIndex = 1; colIndex <= COL_VALUE; colIndex++) {
+                    document.writeln(`<td>${colIndex}</td>`);
+                }
+
+                document.writeln('</tr>');
+            }
+
+            document.writeln('</tbody>');
+            document.writeln('</table>');
+        </script>
+    </body>
+</html>

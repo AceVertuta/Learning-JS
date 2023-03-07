@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #11</h1>
+
+        <p>
+            Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+        </p>
+
+        <script>
+            const minEnteredNumber = parseInt(prompt('Enter min number:'));
+            const maxEnteredNumber = parseInt(prompt('Enter max number:'));
+
+            const NUMBERS_AMOUNT = 5;
+
+            let sum = 0;
+
+            if (minEnteredNumber >= maxEnteredNumber) {
+                alert("Invalid data: min value less or equal max value. Please refresh the page and try again.");
+            } else if (((maxEnteredNumber - minEnteredNumber) <= 8 ) && ((minEnteredNumber % 2 === 0 || maxEnteredNumber % 2 === 0))) {
+                alert("Invalid data: this range can't be used to get sum of 5 odd numbers. Please refresh the page and try again.");
+            } else {
+                document.writeln(`Min Entered Number =  ${minEnteredNumber}`);
+                document.writeln('<br/>');
+
+                document.writeln(`Max Entered Number =  ${maxEnteredNumber}`);
+                document.writeln('<br/>');
+                document.writeln('<br/>');
+                document.writeln('<hr/>');
+
+                for (let value = minEnteredNumber, round = 0; value <= maxEnteredNumber, round < NUMBERS_AMOUNT; value++) {
+                    if (value % 2) {
+                        document.writeln(`Value to add: ${value}`);
+                        document.writeln('<br/>');
+
+                        sum += value;
+                        round++;
+                    }
+                }
+
+                document.writeln('<br/>');
+                document.writeln('<hr/>');
+
+                document.writeln(`Sum =  ${sum}`);
+                document.writeln('<br/>');
+            }
+        </script>
+    </body>
+</html>
