@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="../../../common/js/utility.js"></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #2</h1>
+
+        <p>
+            Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.
+        </p>
+
+        <script>
+            function getDayTypeByDayNumber(dayNumber) {
+                switch(dayNumber) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        return 'Working day';
+
+                    case 6:
+                    case 7:
+                        return 'Day Off';
+
+                    default:
+                        return 'Invalid day number';
+                }
+            }
+
+            const monthNumber = parseInt(prompt('Enter day number'));
+            const seasonName = getDayTypeByDayNumber(monthNumber);
+                
+            document.writeln(seasonName);
+        </script>
+    </body>
+</html>

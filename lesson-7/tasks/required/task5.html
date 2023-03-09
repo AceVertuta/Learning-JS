@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <script src="../../../common/js/utility.js"></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #5</h1>
+
+        <p>
+            Створити окремі функції, які переводять:
+1) Сантиметри у дюйми;
+2) Кілограми у фунти;
+3) Кілометри у милі.
+        </p>
+
+        <script>
+            const SM_IN_INCH = 2.54;
+            const KG_IN_LB = 0.4536;
+            const KM_IN_MILE = 1.609;
+
+            function sm2inch(number) {
+                return number / SM_IN_INCH;
+            }
+
+            function kg2lb(number) {
+                return number / KG_IN_LB;
+            }
+
+            function km2miles(number) {
+                return number / KM_IN_MILE;
+            }
+
+
+
+            let number = parseInt(prompt('Enter number'));
+            number = Math.abs(number);
+
+            document.writeln(`Number: ${number}`);
+            document.writeln('<br>');
+            document.writeln('<hr><br>');
+
+
+
+            const inchNumber = sm2inch(number);
+            const lbNumber = kg2lb(number);
+            const milesNumber = km2miles(number);
+
+
+
+            document.writeln(`sm -> inch: ${number} sm = ${inchNumber} inches`);
+            document.writeln('<br>');
+
+            document.writeln(`kg -> lb: ${number} kg = ${lbNumber} lb`);
+            document.writeln('<br>');
+
+            document.writeln(`km -> miles: ${number} km = ${milesNumber} miles`);
+            document.writeln('<br>');
+        </script>
+    </body>
+</html>

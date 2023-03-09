@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="../../../common/js/utility.js"></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #7</h1>
+
+        <p>
+            Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи
+до зображень передаються у функцію)
+        </p>
+
+        <script>
+            const IMAGES = [
+                'https://www.w3schools.com/html/pic_trulli.jpg',
+                'https://www.w3schools.com/html/img_girl.jpg',
+                'https://www.w3schools.com/html/img_chania.jpg',
+                'https://www.w3schools.com/images/w3lynx_200.png',
+            ];
+
+            function writeRandomImage(images) {
+                const index = getRandomIntInclusive(0, images.length - 1);
+
+                document.writeln(`<img src="${images[index]}">`);
+            }
+
+            writeRandomImage(IMAGES);
+        </script>
+    </body>
+</html>

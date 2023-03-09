@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script src="../../../common/js/utility.js"></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #4</h1>
+
+        <p>
+            Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів:
+кількість парних, кількість додатних, кількість більших за 100.
+        </p>
+
+        <script>
+            function getEvenAmount(a, b, c) {
+                return Array.from(arguments)
+                    .filter((num) => num % 2 === 0)
+                    .length;
+            }
+
+            function getPositiveAmount(a, b, c) {
+                return Array.from(arguments)
+                    .filter((num) => num > 0)
+                    .length;
+            }
+
+            function getGreaterThan100Amount(a, b, c) {
+                return Array.from(arguments)
+                    .filter((num) => num > 100)
+                    .length;
+            }
+
+            function getResult(a, b, c) {
+                const evenNumberAmount = getEvenAmount(a, b, c);
+                const positiveNumberAmount = getPositiveAmount(a, b, c);
+                const greaterThan100NumberAmount = getGreaterThan100Amount(a, b, c);
+
+                return [evenNumberAmount, positiveNumberAmount, greaterThan100NumberAmount];
+            }
+
+            const a = parseInt(prompt('Enter 1-st number'));
+            const b = parseInt(prompt('Enter 2-nd number'));
+            const c = parseInt(prompt('Enter 3-rd number'));
+
+            const [evenNumberAmount, positiveNumberAmount, greaterThan100NumberAmount] = getResult(a, b, c);
+
+            document.writeln(`1-st number: ${a}`);
+            document.writeln('<br>');
+
+            document.writeln(`2-nd number: ${b}`);
+            document.writeln('<br>');
+
+            document.writeln(`3-rd number: ${c}`);
+            document.writeln('<br>');
+            document.writeln('<hr><br>');
+
+
+
+            document.writeln(`even number amount: ${evenNumberAmount}`);
+            document.writeln('<br>');
+
+            document.writeln(`positive number amount: ${positiveNumberAmount}`);
+            document.writeln('<br>');
+
+            document.writeln(`greater than 100 number amount: ${greaterThan100NumberAmount}`);
+            document.writeln('<br>');
+        </script>
+    </body>
+</html>

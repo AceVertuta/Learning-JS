@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <script src="../../../common/js/utility.js"></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #3</h1>
+
+        <p>
+            Створити окремі функції, які для 4 чисел знаходять:
+1)суму;
+2)добуток;
+3)середнє арифметичне;
+4)мінімальне значення.
+        </p>
+
+        <script>
+            function getSum(a, b, c, d) {
+                return a + b + c + d;
+            }
+
+            function getMultiplication(a, b, c, d) {
+                return a * b * c * d;
+            }
+
+            function getAverage(a, b, c, d) {
+                return (a + b + c + d) / 4;
+            }
+
+            function getMin(a, b, c, d) {
+                return Math.min(...arguments);
+            }
+
+            const a = parseInt(prompt('Enter 1-st number'));
+            const b = parseInt(prompt('Enter 2-nd number'));
+            const c = parseInt(prompt('Enter 3-rd number'));
+            const d = parseInt(prompt('Enter 4-th number'));
+
+            const sum = getSum(a, b, c, d);
+            const mult = getMultiplication(a, b, c, d);
+            const average = getAverage(a, b, c, d);
+            const min = getMin(a, b, c, d);
+
+            document.writeln(`1-st number: ${a}`);
+            document.writeln('<br>');
+
+            document.writeln(`2-nd number: ${b}`);
+            document.writeln('<br>');
+
+            document.writeln(`3-rd number: ${c}`);
+            document.writeln('<br>');
+
+            document.writeln(`4-th number: ${d}`);
+            document.writeln('<br>');
+            document.writeln('<hr><br>');
+
+
+
+            document.writeln(`sum: ${sum}`);
+            document.writeln('<br>');
+
+            document.writeln(`multiplication: ${mult}`);
+            document.writeln('<br>');
+
+            document.writeln(`min value: ${min}`);
+            document.writeln('<br>');
+
+            document.writeln(`average value: ${average}`);
+            document.writeln('<br>');
+        </script>
+    </body>
+</html>

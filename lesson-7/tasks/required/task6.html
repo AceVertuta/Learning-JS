@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script src="../../../common/js/utility.js"></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #6</h1>
+
+        <p>
+            Створити функцію, яка створює таблицю з вказаною кількістю рядків і стовпців (таблиця
+заповнюється заданим фіксованим повідомленням).
+        </p>
+
+        <script>
+            function writeTable(cols, rows, dataToFill) {
+                document.writeln('<table border="1">');
+                    document.writeln('<tbody>');
+
+                        for(let row = 0; row < rows; row++) {
+                            document.writeln('<tr>');
+
+                                for(let col = 0; col < cols; col++) {
+                                    document.writeln('<td>');
+                                        document.writeln(dataToFill);
+                                    document.writeln('</td>');
+                                }
+
+                            document.writeln('</tr>');
+                        }
+
+                    document.writeln('<tbody>');
+                document.writeln('</table>');
+            }
+
+
+            const cols = parseInt(prompt('Enter amount of columns'));
+            const rows = parseInt(prompt('Enter amount of rows'));
+            const dataToFill = prompt('EnterDataToFill');
+
+            writeTable(cols, rows, dataToFill);
+        </script>
+    </body>
+</html>

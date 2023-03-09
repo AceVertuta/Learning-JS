@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="../../../common/js/utility.js"></script>
+
+        <title>Home Work</title>
+    </head>
+    <body>
+        <h1>Task #9</h1>
+
+        <p>
+            Дано покази температур (довільна кількість). Розробити функцію, яка дозволить
+підрахувати кількість від’ємних показів температури.
+        </p>
+
+        <script>
+            const MIN = 1;
+            const MAX = 10;
+
+            function getAmountOfNegativeValues(temperatureArray) {
+                return temperatureArray
+                    .filter(x => x < 0)
+                    .length;
+            }
+
+            const amountOfInputs = getRandomIntInclusive(MIN, MAX);
+            const temperatureArray = new Array(amountOfInputs);
+
+            for(let i = 0; i < amountOfInputs; i++) {
+                const input = parseInt(prompt(`Rund ${i + 1} of ${amountOfInputs}. Enter temperature`));
+
+                temperatureArray[i] = input;
+            }
+
+            for(let i = 0; i < amountOfInputs; i++) {
+                document.writeln(`Temperature #${i + 1}: ${temperatureArray[i]}`);
+                document.writeln('<br>');
+            }
+
+            document.writeln('<br><hr>');
+
+            document.writeln(`Negative amount: ${getAmountOfNegativeValues(temperatureArray)}`);
+            document.writeln('<br>');
+        </script>
+    </body>
+</html>
